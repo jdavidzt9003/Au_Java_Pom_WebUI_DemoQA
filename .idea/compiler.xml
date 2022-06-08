@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Au_Java_Pom_WebUI_DemoQA" />
+        <module name="AutomationPractice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AutomationPractice" target="1.8" />
+      <module name="challenge_pom_one" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
