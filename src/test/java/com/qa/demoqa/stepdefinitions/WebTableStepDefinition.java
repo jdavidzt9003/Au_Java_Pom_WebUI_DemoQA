@@ -32,11 +32,11 @@ public class WebTableStepDefinition {
     @Given("que el usuario se encuentra en la página de web tables")
     public void queElUsuarioSeEncuentraEnLaPáginaDeWebTables() throws InterruptedException {
         try {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chrome/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chrome/chromedriver");
             driver = new ChromeDriver();
             driver.get("https://demoqa.com");
         } catch (Exception e) {
-            System.out.println("Un error en el controlador ha ocurrido");
+            System.out.println("Ha ocurrido un error con el driver");
         }
         try {
             homePage = new HomePage(driver);
@@ -72,7 +72,7 @@ public class WebTableStepDefinition {
 
     @When("el usuario da click en el boton eliminar")
     public void elUsuarioDaClickEnElBotonEliminar() {
-
+        webTables = new WebTables(driver);
     }
 
     @Then("el registro seleccionado se elimina correctamente de la tabla")

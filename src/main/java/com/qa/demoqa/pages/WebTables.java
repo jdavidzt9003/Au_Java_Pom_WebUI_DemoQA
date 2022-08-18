@@ -31,7 +31,7 @@ public class WebTables extends BasePage {
     By assertDepartment = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[6]");
 
     //Action
-    By buttonDelete = By.id("delete-record-3");
+    By buttonDelete = By.id("delete-record-4");
     By buttonEdit = By.id("edit-record-4");
 
     public WebTables(WebDriver driver) {
@@ -64,6 +64,8 @@ public class WebTables extends BasePage {
         typeInto(labelDepartment, "Tech");
         clickOn(btnSubmit);
     }
+
+    public void 
 
     public List<String> registrationDone(){
         List<String> submittedFormResult = new ArrayList<>();
