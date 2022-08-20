@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        plugin = {"pretty", "html:webRunner/cucumber-report/cucumber.html"},
+        plugin = {"pretty", "html:reports/webRunner/cucumber-report/cucumber.html"},
         features = {"src/test/resources/features/webtable.feature"},
         glue = {"com.qa.demoqa.stepdefinitions"},
         publish = true

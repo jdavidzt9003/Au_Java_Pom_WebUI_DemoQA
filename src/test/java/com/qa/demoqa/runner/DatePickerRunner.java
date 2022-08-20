@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        plugin = {"pretty", "html:datePicker/cucumber-report/cucumber.html"},
+        plugin = {"pretty", "html:reports/datePicker/cucumber-report/cucumber.html"},
         features = {"src/test/resources/features/datepicker.feature"},
         glue = {"com.qa.demoqa.stepdefinitions"},
         publish = true
