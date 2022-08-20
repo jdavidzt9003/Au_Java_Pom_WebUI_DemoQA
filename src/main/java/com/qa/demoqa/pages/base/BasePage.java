@@ -23,6 +23,10 @@ public class BasePage {
         return driver.findElement(locator).getText();
     }
 
+    public String getValue(By locator){
+        return driver.findElement(locator).getAttribute("value");
+    }
+
     public void typeInto(By locator, String text){
         driver.findElement(locator).sendKeys(text);
     }
