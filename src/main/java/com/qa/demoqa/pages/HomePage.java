@@ -24,4 +24,8 @@ public class HomePage extends BasePage {
     public void openWidgets(){
         clickOn(widgets);
     }
+
+    public void openAlerts(){
+        clickOn(alertsFrameYWindows);
+    }
 }

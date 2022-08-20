@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BasePage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public BasePage(WebDriver driver) {
             this.driver = driver;
@@ -33,5 +33,18 @@ public class BasePage {
 
     public void clearText(By locator){
         driver.findElement(locator).clear();
+    }
+
+    public void alertsAccept(){
+        driver.switchTo().alert().accept();
+    }
+    public void alertsDismiss(){
+        driver.switchTo().alert().dismiss();
+    }
+    public void alertsSendKeys(String keys){
+        driver.switchTo().alert().sendKeys(keys);
+    }
+    public void alertsGetText(){
+        driver.switchTo().alert().getText();
     }
 }
