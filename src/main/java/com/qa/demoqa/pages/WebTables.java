@@ -11,8 +11,6 @@ public class WebTables extends BasePage {
 
     By textHeader = By.className("main-header");
     By buttonAdd = By.id("addNewRecordButton");
-
-    //Registration Form
     By labelFirstName = By.id("firstName");
     By labelLastName = By.id("lastName");
     By labelEmail = By.id("userEmail");
@@ -20,18 +18,14 @@ public class WebTables extends BasePage {
     By labelSalary = By.id("salary");
     By labelDepartment = By.id("department");
     By btnSubmit = By.id("submit");
-
-    //Assert
     By assertFirstName = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[1]");
     By assertLastName = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[2]");
     By assertAge = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[3]");
     By assertEmail = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[4]");
     By assertSalary = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[5]");
     By assertDepartment = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[6]");
-
-    //Action
     By btnDelete = By.id("delete-record-4");
-    By btnEdit = By.id("edit-record-4");
+
 
     public WebTables(WebDriver driver) {
         super(driver);
@@ -80,7 +74,7 @@ public class WebTables extends BasePage {
     }
 
     public List<String> expected(){
-        List<String> submitedFormResult = new ArrayList<String>();
+        List<String> submitedFormResult = new ArrayList<>();
         submitedFormResult.add("David");
         submitedFormResult.add("Salvador");
         submitedFormResult.add("30");
@@ -89,16 +83,4 @@ public class WebTables extends BasePage {
         submitedFormResult.add("Tech");
         return submitedFormResult;
     }
-
-    public List<String> assertDelete(){
-        List<String> submitedFormResult = new ArrayList<String>();
-        submitedFormResult.add("");
-        submitedFormResult.add("");
-        submitedFormResult.add("");
-        submitedFormResult.add("");
-        submitedFormResult.add("");
-        submitedFormResult.add("");
-        return submitedFormResult;
-    }
-
 }

@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:reports/webRunner/cucumber-report/cucumber.html"},
         features = {"src/test/resources/features/webtable.feature"},
         glue = {"com.qa.demoqa.stepdefinitions"},
-        publish = true
+        publish = true,
+        tags = "@Test"
 )
 public class WebTableRunner {
 }

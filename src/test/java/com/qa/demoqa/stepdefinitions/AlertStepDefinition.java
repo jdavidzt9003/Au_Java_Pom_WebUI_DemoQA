@@ -10,10 +10,14 @@ import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.apache.log4j.Logger;
+
+
 
 public class AlertStepDefinition {
 
     public WebDriver driver;
+    private static final Logger LOGGER = Logger.getLogger(AlertStepDefinition.class);
     HomePage homePage;
     AlertPage alertPage;
     AlertWindowPage alertWindowPage;
@@ -26,16 +30,15 @@ public class AlertStepDefinition {
             driver.manage().window().maximize();
             driver.get("https://demoqa.com");
         } catch (Exception e) {
-            System.out.println("Ha ocurrido un error con el driver");
+            LOGGER.error("Ha ocurrido un error con el driver", e);
         }
         try {
             homePage = new HomePage(driver);
             homePage.openAlerts();
             alertWindowPage = new AlertWindowPage(driver);
             alertWindowPage.openAlert();
-            Thread.sleep(3000);
         } catch (Exception e) {
-            System.out.println("Un error ha ocurrido intentanto acceder a Alerts");
+            LOGGER.error("Un error ha ocurrido intentanto acceder a Alerts", e);
         }
     }
 
@@ -50,10 +53,9 @@ public class AlertStepDefinition {
             alertPage.openConfirmButtonDismiss();
             Assertions.assertEquals(AlertMessage.CONFIRM_CANCEL.getValue(),alertPage.messageConfirm());
             alertPage.openPromptAlert();
-            Thread.sleep(5000);
             Assertions.assertEquals(alertPage.comparePrompt(), alertPage.messagePrompt());
         } catch (Exception e) {
-            System.out.println("Error en la ejecución de alertas");
+            LOGGER.error("Error en la ejecución de alertas", e);
         }
     }
 

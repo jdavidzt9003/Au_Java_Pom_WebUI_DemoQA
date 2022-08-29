@@ -7,10 +7,12 @@ Feature: Como usuario de demoqa
   Background:
     Given que el usuario se encuentra en la página de web tables
 
+  @Test-01 @Test
   Scenario: Agregar un nuevo registro en la tabla de web tables
     When el usuario diligencia todos los campos del formulario de registro
     Then los datos se almacenarán correctamente en la tabla
 
+  @Test-02 @Test
   Scenario: Eliminar un registro existente en la tabla de web tables
     When el usuario da click en el boton eliminar
     Then el registro seleccionado se elimina correctamente de la tabla

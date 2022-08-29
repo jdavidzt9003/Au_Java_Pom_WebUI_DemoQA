@@ -3,12 +3,10 @@ package com.qa.demoqa.pages;
 import com.qa.demoqa.pages.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class DatePickerPage extends BasePage {
 
     By headerPage = By.className("main-header");
-    By dataSelectDate = By.id("datePickerMonthYearInput");
     By selectMonth = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div/span[1]");
     By selectYear = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div/span[1]");
     By year = By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[6]");

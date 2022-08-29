@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:reports/datePicker/cucumber-report/cucumber.html"},
         features = {"src/test/resources/features/datepicker.feature"},
         glue = {"com.qa.demoqa.stepdefinitions"},
-        publish = true
+        publish = true,
+        tags = "@Test-01"
 )
 public class DatePickerRunner {
 }

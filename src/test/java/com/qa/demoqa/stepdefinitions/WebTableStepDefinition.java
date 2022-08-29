@@ -7,6 +7,7 @@ import com.qa.demoqa.util.GetHeader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +15,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class WebTableStepDefinition {
+
+    private static final Logger LOGGER = Logger.getLogger(WebTableStepDefinition.class);
 
     public WebDriver driver;
     HomePage homePage;
@@ -28,20 +31,19 @@ public class WebTableStepDefinition {
             driver.manage().window().maximize();
             driver.get("https://demoqa.com");
         } catch (Exception e) {
-            System.out.println("Ha ocurrido un error con el driver");
+            LOGGER.error("Ha ocurrido un error con el driver");
         }
         try {
             homePage = new HomePage(driver);
             homePage.openElements();
             elementPage = new ElementPage(driver);
             Assertions.assertEquals(GetHeader.HEADER_ELEMENT.getValue(), elementPage.getHeader());
-            Thread.sleep(3000);
             elementPage.openWebTableOption();
             webTables = new WebTables(driver);
             Assertions.assertEquals(GetHeader.HEADER_WEB_TABLE.getValue(), webTables.getHeaderWebTable());
 
         } catch (Exception e) {
-            System.out.println("Un error ha ocurrido intentanto acceder a web table");
+            LOGGER.error("Un error ha ocurrido intentanto acceder a web table");
         }
     }
 
@@ -51,14 +53,12 @@ public class WebTableStepDefinition {
         webTables.intoFormRegistration();
         webTables.clearFormRegistration();
         webTables.fillForm();
-        Thread.sleep(3000);
     }
 
     @Then("los datos se almacenarán correctamente en la tabla")
     public void losDatosSeAlmacenaranCorrectamenteEnLaTabla() throws InterruptedException {
         webTables = new WebTables(driver);
         Assertions.assertEquals(webTables.registrationDone(), webTables.expected());
-        Thread.sleep(3000);
         driver.quit();
     }
 
@@ -69,10 +69,9 @@ public class WebTableStepDefinition {
             webTables.intoFormRegistration();
             webTables.clearFormRegistration();
             webTables.fillForm();
-            Thread.sleep(3000);
             webTables.deleteRegister();
         } catch (Exception e) {
-            System.out.println("Ha ocurrido un error al eliminar el registro");
+            LOGGER.error("Ha ocurrido un error al eliminar el registro");
         }
     }
 

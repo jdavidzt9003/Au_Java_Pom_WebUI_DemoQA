@@ -10,7 +10,9 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:reports/alerts/cucumber-report/cucumber.html"},
         features = {"src/test/resources/features/alerts.feature"},
         glue = {"com.qa.demoqa.stepdefinitions"},
-        publish = true
+        publish = true,
+        tags = "@Test-01"
+
 )
 public class AlertRunner {
 }

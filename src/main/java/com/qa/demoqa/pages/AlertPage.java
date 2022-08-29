@@ -25,9 +25,9 @@ public class AlertPage extends BasePage {
         alertsAccept();
     }
 
-    public void openTimerAlertButton() throws InterruptedException {
+    public void openTimerAlertButton(){
         clickOn(timerAlertButton);
-        Thread.sleep(6000);
+        waitExplicitAlert();
         alertsAccept();
     }
 

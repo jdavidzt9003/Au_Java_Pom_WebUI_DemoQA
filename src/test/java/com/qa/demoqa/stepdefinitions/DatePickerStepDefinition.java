@@ -5,11 +5,14 @@ import com.qa.demoqa.util.GetHeader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DatePickerStepDefinition {
+
+    private static final Logger LOGGER = Logger.getLogger(DatePickerStepDefinition.class);
 
     public WebDriver driver;
     public DatePickerPage datePickerPage;
@@ -22,14 +25,13 @@ public class DatePickerStepDefinition {
             driver.manage().window().maximize();
             driver.get("https://demoqa.com/date-picker");
         } catch (Exception e) {
-            System.out.println("Ha ocurrido un error con el driver");
+            LOGGER.error("Ha ocurrido un error con el driver",e);
         }
         try {
             datePickerPage = new DatePickerPage(driver);
             Assertions.assertEquals(GetHeader.HEADER_DATE_PICKER.getValue(), datePickerPage.getHeader());
-            Thread.sleep(5000);
         } catch (Exception e) {
-            System.out.println("Un error ha ocurrido intentanto acceder a Date Picker");
+            LOGGER.error("Un error ha ocurrido intentanto acceder a Date Picker");
         }
     }
 
@@ -39,7 +41,7 @@ public class DatePickerStepDefinition {
             datePickerPage = new DatePickerPage(driver);
             datePickerPage.selectDate();
         } catch (Exception e) {
-            System.out.println("Error en la selección de fecha");
+            LOGGER.error("Error en la selección de fecha");
         }
     }
 
@@ -48,10 +50,9 @@ public class DatePickerStepDefinition {
         try {
             datePickerPage = new DatePickerPage(driver);
             Assertions.assertEquals(datePickerPage.dateExpected(), datePickerPage.getDate());
-            Thread.sleep(5000);
             driver.quit();
         } catch (Exception e) {
-            System.out.println("Error comparando datos");
+            LOGGER.error("Error comparando datos");
         }
     }
 }

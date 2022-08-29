@@ -11,19 +11,12 @@ public class HomePage extends BasePage {
     }
 
     private final By elements = By.xpath("/html/body/div[2]/div/div/div[2]/div/div[1]/div/div[1]");
-    private final By forms = By.xpath("/html/body/div[2]/div/div/div[2]/div/div[2]/div/div[1]");
     private final By alertsFrameYWindows = By.xpath("/html/body/div[2]/div/div/div[2]/div/div[3]/div/div[1]");
-    private final By widgets = By.xpath("/html/body/div[2]/div/div/div[2]/div/div[4]/div/div[1]");
-    private final By interactions = By.xpath("/html/body/div[2]/div/div/div[2]/div/div[5]/div/div[1]");
-    private final By bookStoreApp = By.xpath("/html/body/div[2]/div/div/div[2]/div/div[6]/div/div[1]");
 
     public void openElements() {
         clickOn(elements);
     }
 
-    public void openWidgets(){
-        clickOn(widgets);
-    }
 
     public void openAlerts(){
         clickOn(alertsFrameYWindows);
